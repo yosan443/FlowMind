@@ -8,8 +8,10 @@
     "build": "vite build",
     "test": "jest",
     "lint": "eslint .",
-    "format": "prettier --write .",
-    "migrate": "bun run scripts/migrate.ts"
+  "format": "prettier --write .",
+  "migrate": "wrangler d1 migrations apply FLOWMIND_DB",
+  "migrate:status": "wrangler d1 migrations list FLOWMIND_DB",
+  "db:execute": "wrangler d1 execute FLOWMIND_DB --command"
   },
   "keywords": [
     "AI",
@@ -54,6 +56,7 @@
     "ts-jest": "^27.0.6",
     "ts-node": "^10.9.2",
     "typescript": "^4.4.3",
-    "vite": "^2.5.0"
+    "vite": "^2.5.0",
+    "wrangler": "^3.78.0"
   }
 }

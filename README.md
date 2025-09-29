@@ -28,7 +28,17 @@ To get started with FlowMind, follow these steps:
    bun install
    ```
 
-4. Start the development server:
+4. (First time only) Authenticate Wrangler CLI with your Cloudflare account:
+   ```bash
+   bunx wrangler login
+   ```
+
+5. Apply the database migrations to your Cloudflare D1 instance:
+   ```bash
+   bun run migrate
+   ```
+
+6. Start the development server:
    ```bash
    bun run start
    ```
@@ -40,16 +50,43 @@ Create a `.env` file in the project root and configure the following variables:
 ```bash
 # Server
 PORT=5000
-AI_API_KEY=your-default-ai-key
 D1_DATABASE_URL=your-cloudflare-d1-url
 D1_DATABASE_AUTH_TOKEN=your-d1-auth-token
 JWT_SECRET=change-me-to-a-long-random-string
 GOOGLE_CLIENT_ID=your-google-oauth-client-id
 GOOGLE_CLIENT_SECRET=your-google-oauth-client-secret
 BCRYPT_SALT_ROUNDS=10
+
+# Optional fallback for LLM nodes when a user has not selected a stored key
+OPENAI_API_KEY=your-optional-shared-openai-key
 ```
 
 The frontend automatically discovers `GOOGLE_CLIENT_ID` from the backend via `/api/auth/config`. If the value is missing, Google Sign-In will be disabled in the UI.
+
+### Managing LLM API Keys
+
+Each user can register their own LLM API keys from the workflow inspector panel. Keys are persisted in the `api_keys` table and only the masked form is ever returned to the client. During execution, a workflow node will prefer a user-specific key reference; if none is selected, the server falls back to `OPENAI_API_KEY`.
+
+## Database Management (Wrangler CLI)
+
+FlowMind now relies on the Cloudflare Wrangler CLI for all D1 operations. Ensure `wrangler.toml` has your Cloudflare `account_id` and that the `FLOWMIND_DB` binding points to the correct database ID.
+
+- **Apply migrations** (runs the SQL files under `migrations/flowmind-db`):
+   ```bash
+   bun run migrate
+   ```
+
+- **Check applied migrations**:
+   ```bash
+   bun run migrate:status
+   ```
+
+- **Run ad-hoc SQL** (append your query after `--`):
+   ```bash
+   bun run db:execute -- "SELECT COUNT(*) FROM users;"
+   ```
+
+If you previously relied on `scripts/migrate.ts`, note that it is now deprecated in favour of Wrangler.
 
 ## Usage
 

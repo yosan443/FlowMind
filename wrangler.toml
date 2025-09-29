@@ -1,0 +1,15 @@
+name = "flowmind-app"
+main = "src/worker/index.ts"
+compatibility_date = "2024-09-30"
+
+# NOTE:
+# - Replace this with your actual Cloudflare account ID before running `wrangler` commands.
+# - If you do not deploy a Worker, `main` is unused but required by Wrangler's schema.
+account_id = "YOUR_CLOUDFLARE_ACCOUNT_ID"
+
+[[d1_databases]]
+# The binding name is referenced by Wrangler commands (e.g. `wrangler d1 migrations apply FLOWMIND_DB`).
+binding = "FLOWMIND_DB"
+database_name = "flowmind-db"
+database_id = "5812bed1-2b85-4bb7-b7ce-b64355700462"
+migrations_dir = "migrations/flowmind-db"
