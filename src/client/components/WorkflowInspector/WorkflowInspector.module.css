@@ -1,0 +1,378 @@
+.inspector {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+    padding: 20px 24px;
+    overflow-y: auto;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.section h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.placeholder {
+    margin: 0;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.nodeDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.nodeHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.badge {
+    background: #e0e7ff;
+    color: #3730a3;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.status {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+.status.idle {
+    background: #f8fafc;
+    color: #475569;
+}
+
+.status.pending {
+    background: #e0e7ff;
+    color: #4338ca;
+}
+
+.status.running {
+    background: #cffafe;
+    color: #0e7490;
+}
+
+.status.success {
+    background: #dcfce7;
+    color: #047857;
+}
+
+.status.error {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.status.cancelled {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.fieldGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.fieldLabel {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #475569;
+}
+
+.input,
+.textarea,
+.select {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #cbd5f5;
+    padding: 10px 12px;
+    font-size: 14px;
+    background: #f8fafc;
+    color: #0f172a;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.textarea {
+    resize: vertical;
+}
+
+.inlineGroup {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #475569;
+}
+
+.outputPreview {
+    background: #0f172a;
+    color: #e2e8f0;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.outputPreview h4 {
+    margin-top: 0;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #cbd5f5;
+}
+
+.outputPreview pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-family: "Fira Code", "SFMono-Regular", Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    font-size: 12px;
+}
+
+.statusMessage {
+    margin: 0;
+    font-size: 12px;
+    color: #f97316;
+}
+
+.deleteButton {
+    align-self: flex-start;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: none;
+    background: linear-gradient(135deg, #f43f5e, #fb7185);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(244, 63, 94, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.deleteButton:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 40px rgba(244, 63, 94, 0.35);
+}
+
+.runStatus {
+    border-radius: 14px;
+    padding: 12px;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(79, 70, 229, 0.18));
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.runStatus p {
+    margin: 0;
+    font-size: 12px;
+    color: #1e293b;
+}
+
+.statusTitle {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #312e81;
+}
+
+.workflowList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.workflowListItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    gap: 12px;
+}
+
+.workflowListItem div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.workflowListItem strong {
+    font-size: 14px;
+    color: #0f172a;
+}
+
+.workflowListItem span {
+    font-size: 11px;
+    color: #64748b;
+}
+
+.workflowListItem button {
+    border: none;
+    border-radius: 999px;
+    padding: 6px 14px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.workflowListItem button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 30px rgba(99, 102, 241, 0.35);
+}
+
+.helperText {
+    margin: 0;
+    font-size: 12px;
+    color: #64748b;
+}
+
+.successText {
+    margin: 4px 0 0;
+    font-size: 12px;
+    color: #047857;
+}
+
+.errorText {
+    margin: 4px 0 0;
+    font-size: 12px;
+    color: #b91c1c;
+}
+
+.apiKeyForm {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #f8fafc;
+}
+
+.primaryButton {
+    align-self: flex-start;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primaryButton:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.primaryButton:not(:disabled):hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 36px rgba(99, 102, 241, 0.35);
+}
+
+.apiKeyList {
+    list-style: none;
+    margin: 12px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.apiKeyListItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    gap: 12px;
+}
+
+.apiKeyListItem div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.apiKeyListItem strong {
+    font-size: 13px;
+    color: #0f172a;
+}
+
+.apiKeyListItem span {
+    font-size: 11px;
+    color: #64748b;
+}
+
+.apiKeyMeta {
+    font-size: 10px;
+    color: #94a3b8;
+}
+
+.dangerButton {
+    border: none;
+    border-radius: 999px;
+    padding: 6px 14px;
+    background: linear-gradient(135deg, #f43f5e, #fb7185);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dangerButton:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.dangerButton:not(:disabled):hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 36px rgba(244, 63, 94, 0.35);
+}

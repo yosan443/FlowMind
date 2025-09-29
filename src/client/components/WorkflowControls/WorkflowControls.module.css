@@ -1,0 +1,107 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #1e293b 0%, #312e81 100%);
+  padding: 18px 24px;
+  border-radius: 18px;
+  box-shadow: 0 24px 65px rgba(30, 64, 175, 0.35);
+  color: #e2e8f0;
+  margin-bottom: 20px;
+}
+
+.titleGroup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.titleGroup h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.nameInput {
+  border: none;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 16px;
+  min-width: 240px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #f8fafc;
+}
+
+.nameInput::placeholder {
+  color: rgba(226, 232, 240, 0.65);
+}
+
+.nameInput:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.45);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 12px;
+}
+
+.userBadge {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.55);
+  color: #e2e8f0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.logoutButton {
+  background: rgba(15, 23, 42, 0.35);
+  color: #e0e7ff;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 600;
+}
+
+.logoutButton:hover {
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.35);
+}
+
+.actions button {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.saveButton {
+  background: rgba(255, 255, 255, 0.18);
+  color: #e0e7ff;
+}
+
+.runButton {
+  background: linear-gradient(135deg, #22d3ee, #0ea5e9);
+  color: #0f172a;
+}
+
+.stopButton {
+  background: linear-gradient(135deg, #f97316, #fb923c);
+  color: #fff;
+}
+
+.actions button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.28);
+}
